@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <h2 class="text-center header-title">Tutorial On {{featureName}}</h2>
+            <p>Individual tree detection is critical in forest monitoring and inventory. In this paper, we propose a
+                novel method to use multi-view satellite images to detect individual trees and delineate their crowns.
+                As compared to previous methods, we generate the DSM from the multi-view high-resolution satellite
+                images and combine the 2D spectral and 3D structure information to detect the trees. Firstly, the
+                vegetation areas are extracted to remove the non-vegetation objects while terrain areas are extracted to
+                help calculate the tree height. Then, we utilize Top-Hat morphological operation to efficiently find the
+                local maxima points as treetops and further refine them by checking their heights and doing non-maximal
+                suppression. Finally, we use a super-pixel segmentation algorithm to delineate the tree crowns which
+                considered both 2D spectral and 3D structure similarities. To effectively assess the performance, we
+                rigorously match and evaluate the detected and reference trees in a one-to-one relationship. A
+                qualitative evaluation at three different sites shows that the proposed method is able to detect
+                individual trees at different regions with high accuracy.​</p>
+            <div class=" text-center continue-btn">
+                    <button class="btn btn-primary" (click)="continueLevel()">Continue</button>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
+    </div>
+</div>

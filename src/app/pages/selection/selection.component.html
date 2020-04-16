@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="card text-center">
+                <div class="card-body">
+                    <ul>
+                        <li *ngFor="let image of images, let i = index">
+                            <input type="checkbox" [id]="image._id" />
+                            <label [for]="image._id" (click)="$event.stopPropagation(); pushImages(image);">
+                                <img [src]="image.imageUrl" />
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-header bg-transparent border-success">
+                        <h4>Levels</h4>
+                    </div>
+                    <h5 class="card-title">Level 1 (Image Selection)</h5>
+                    <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">Level 1</a>
+                        <a class="nav-link disabled" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">Level 2</a>
+                        <a class="nav-link disabled" id="v-pills-messages-tab" data-toggle="pill"
+                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">Level 3</a>
+                    </div>
+                    <p>Please select images from the gallery that contains <span class="feature">{{featureName}}</span>
+                    </p>
+                    <div class="card-footer bg-transparent">
+                        <button (click)="imagesSelected()" type="button" class="btn btn-primary">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" data-backdrop="static"
+    aria-labelledby="noDataModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="modal-header" style="background-color:lightgrey">
+                <h5 class="modal-title" id="noDataModalLongTitle">*Hurray*</h5>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-check-circle"></i>
+                You Marked The Correct Images, You Can Play Level2 Now!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="coutinue()">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" data-backdrop="static"
+    aria-labelledby="noDataModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center">
+            <div class="modal-header" style="background-color:lightgrey">
+                <h5 class="modal-title" id="noDataModalLongTitle">Oops!</h5>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-frown"></i>
+                You Marked The Wrong Images, Have A look Again The Tutorial!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="tutorial()">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.login {
+  height: 100vh;
+  background-image: url(./../../../assets/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .container {
+    height: 100vh;
+    .row {
+      height: 100vh;
+      .form-item {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & > div {
+          background-color: white;
+          padding: 32px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          margin: 0 20px;
+          form {
+            .btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    height: auto;
+    .container {
+      height: auto;
+      .row {
+        height: auto;
+        padding: 40px 0;
+        .form-item {
+          height: auto;
+          & > div {
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
